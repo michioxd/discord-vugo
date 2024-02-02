@@ -1,0 +1,6 @@
+bot_token: "<Your bot token>" # Required. Bot token, claim it from Discord Developer Portal
+guild_channel_id: "<Your channel id>" # Required. Specific a channel in server to upload file
+input_file: "d:\\nggyu.mp4" # Required. Input file path name, alternative: use -i argument
+output_file: "./output.m3u8" # Optional. Output file path name, alternative: use -o argument, default: "./output.m3u8"
+use_proxy: false # Optional. Enable proxy url
+proxy_endpoint: "https://example.com/proxy?url=" # Required if use_proxy enabled. Proxy Discord CDN url (cors?)
