@@ -74,18 +74,18 @@ Use those options in [discord-vugo-config.yaml](discord-vugo-config.yaml.example
 - Go to [Discord Developer Portal](https://discord.com/developers/applications)
 - Click `New Application`
 
-  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/326f87bc-8e31-4add-8de8-822cfee7ffdb)
+  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/db5ad43f-f64f-43fc-a06e-a1a4f67a2476)
 
 - Enter a name you want (of course bruh), remember to agree Discord TOS :)
 
-  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/5d7d77c2-b421-4b45-8900-7d6d13b4a0f7)
+  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/8649070e-61f3-4618-93a6-321f08266442)
 
 - Go to `Bot` at sidebar
 - Click `Reset Token`
 - Enter 2FA code if you have
 - Copy the new token
 
-  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/4cec19b4-e164-4ab9-b68f-441f4e06ae2c)
+  ![image](https://github.com/michioxd/discord-vugo/assets/80969068/c972ecb0-3722-48df-ad6f-885a768d111f)
 
 ### Install FFmpeg
 
