@@ -29,7 +29,7 @@ func init() {
 	fmt.Println("=======\ndiscord-vugo powered by michioxd\nversion: " + version + "\nhttps://github.com/michioxd/discord-vugo\n=======\n ")
 
 	// init config
-	viper.SetConfigFile("./discord-vugo-config.yaml")
+	// viper.SetConfigFile("./discord-vugo-config.yaml")
 
 	viper.SetDefault("bot_token", "")
 	viper.SetDefault("guild_channel_id", "")
@@ -37,9 +37,13 @@ func init() {
 	viper.SetDefault("use_proxy", false)
 	viper.SetDefault("proxy_endpoint", "")
 
+	viper.SetConfigName("discord-vugo-config")
+	viper.SetConfigType("yaml")
+	viper.AddConfigPath(".")
+
 	if cfgErr := viper.ReadInConfig(); cfgErr != nil {
 		if _, ok := cfgErr.(viper.ConfigFileNotFoundError); ok {
-			fmt.Println("[WARN] Created configuration file, go to discord-vugo-config.yaml then edit something you need")
+			fmt.Println("[WARN] Created configuration file, go to discord-vugo-config.yaml then edit something you need. You may check out the configuration at https://github.com/michioxd/discord-vugo/tree/main?tab=readme-ov-file#configuration")
 			viper.WriteConfigAs("./discord-vugo-config.yaml")
 			os.Exit(0)
 		} else {
