@@ -17,7 +17,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-const version = "0.1"
+const version = "0.1.1"
 const temporaryPath = "./.discord-vugo-tmp"
 
 var fileNameTemp string = "dvugo_" + strconv.FormatInt(time.Now().UnixNano(), 10)
@@ -29,11 +29,9 @@ func init() {
 	fmt.Println("=======\ndiscord-vugo powered by michioxd\nversion: " + version + "\nhttps://github.com/michioxd/discord-vugo\n=======\n ")
 
 	// init config
-	// viper.SetConfigFile("./discord-vugo-config.yaml")
-
 	viper.SetDefault("bot_token", "")
 	viper.SetDefault("guild_channel_id", "")
-	viper.SetDefault("file_max_second", "5")
+	viper.SetDefault("hls_time", "5")
 	viper.SetDefault("use_proxy", false)
 	viper.SetDefault("proxy_endpoint", "")
 
@@ -73,6 +71,7 @@ func init() {
 	// check input/output
 	flag.StringVar(&workingFilePath, "i", "", "Input video path file. Example: -i \"D:/nggyu.mp4\"")
 	flag.StringVar(&outputFilePath, "o", "./output.m3u8", "Output m3u8 path file. Default ./output.m3u8. Example: -o \"D:/nggyu-hls.m3u8\"")
+	flag.Parse()
 
 	if workingFilePath == "" && viper.GetString("input_file") == "" {
 		panic(fmt.Errorf("Please provide input file path argument or in configuration file!"))
@@ -107,7 +106,7 @@ func main() {
 		"-codec:", "copy",
 		"-start_number", "0",
 		"-hls_segment_filename", temporaryPath+"/"+fileNameTemp+"_%03d.ts",
-		"-hls_time", viper.GetString("file_max_second"),
+		"-hls_time", viper.GetString("hls_time"),
 		"-hls_list_size", "0",
 		"-f", "hls",
 		temporaryPath+"/.discord-vugo-main.m3u8")

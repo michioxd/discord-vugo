@@ -59,6 +59,14 @@ Use those options in [discord-vugo-config.yaml](discord-vugo-config.yaml.example
 
 **Description:** Required if `use_proxy` is enabled. Endpoint proxy will write to playlist file. Example with `https://example.com/proxy?url=`, output in the playlist file will be `https://example.com/proxy?url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F1145752139927388313%2F1146790582899978340%2FSuisei_is_Talalala.mp4%3Fex%3D65ce09f5%26is%3D65bb94f5%26hm%3D3ab28624177860467514e24543d7cd34a6a87ed278e06003f679b58052860cde%26`
 
+#### `hls_time`
+
+**Type**: `string`
+
+**Default**: `5`
+
+**Description:** Set the target segment length. See more: <https://ffmpeg.org/ffmpeg-all.html#toc-Options-67> `hls_time`
+
 ## Arguments
 
 **Usage:** `discord-vugo <arg> <value>`
